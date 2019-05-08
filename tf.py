@@ -23,15 +23,16 @@ model.compile(
 
 #print(model.summary())
 #saving the model
-chkpt = "tf.ckpt"
+""" chkpt = "tf.ckpt"
 checkpointPath = os.path.dirname(os.path.abspath('./tf'))
 cp_callback = tf.keras.callbacks.ModelCheckpoint(
   checkpointPath,
   save_weights_only=True,
   verbose=1
-)
+) 
+"""
+#print(checkpointPath)
 
-print(checkpointPath)
 history = model.fit(celsius_q,fahrenheit_a, epochs=500, verbose=True, callbacks=[cp_callback])
 print('done training')
 #print (history.history['loss'])
